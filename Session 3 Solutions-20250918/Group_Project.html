@@ -7850,7 +7850,7 @@ a.anchor-link {
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [3]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [34]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># check for missing values across columns </span>
@@ -7863,7 +7863,7 @@ a.anchor-link {
 <span class="n">bikes</span> <span class="o">=</span> <span class="n">bikes</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">subset</span><span class="o">=</span><span class="p">[</span><span class="s2">"cloud_cover"</span><span class="p">,</span><span class="s2">"humidity"</span><span class="p">,</span><span class="s2">"pressure"</span><span class="p">,</span><span class="s2">"radiation"</span><span class="p">])</span>
 <span class="n">bikes</span>
 <span class="c1"># fill snow_depth with 0, since on most days in London there is no snow at all</span>
-<span class="n">bikes</span><span class="p">[</span><span class="s2">"snow_depth"</span><span class="p">]</span> <span class="o">=</span> <span class="n">bikes</span><span class="p">[</span><span class="s2">"snow_depth"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">bikes</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s2">"snow_depth"</span><span class="p">]</span> <span class="o">=</span> <span class="n">bikes</span><span class="p">[</span><span class="s2">"snow_depth"</span><span class="p">]</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
 <span class="c1"># double check</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">bikes</span><span class="p">[[</span><span class="s2">"cloud_cover"</span><span class="p">,</span><span class="s2">"humidity"</span><span class="p">,</span><span class="s2">"pressure"</span><span class="p">,</span><span class="s2">"radiation"</span><span class="p">,</span> <span class="s2">"snow_depth"</span><span class="p">]]</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">sum</span><span class="p">())</span>
 <span class="c1"># all good</span>
@@ -7885,18 +7885,6 @@ pressure       0
 radiation      0
 snow_depth     0
 dtype: int64
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/tmp/ipykernel_3637/4091124173.py:11: SettingWithCopyWarning: 
-A value is trying to be set on a copy of a slice from a DataFrame.
-Try using .loc[row_indexer,col_indexer] = value instead
-
-See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
-  bikes["snow_depth"] = bikes["snow_depth"].fillna(0)
 </pre>
 </div>
 </div>
@@ -8146,7 +8134,7 @@ dtype: object
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [27]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [ ]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## distribution of bikes hired</span>
@@ -8164,7 +8152,7 @@ dtype: object
 </div>
 <div class="jp-OutputArea jp-Cell-outputArea">
 <div class="jp-OutputArea-child jp-OutputArea-executeResult">
-<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[27]:</div>
+<div class="jp-OutputPrompt jp-OutputArea-prompt">Out[ ]:</div>
 <div class="jp-RenderedText jp-OutputArea-output jp-OutputArea-executeResult" data-mime-type="text/plain" tabindex="0">
 <pre>Text(0.5, 1.0, 'Count of Bikes Rented')</pre>
 </div>
@@ -8319,7 +8307,7 @@ Bike rentals peak in the summer months and drop sharply in the winter months.</p
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [30]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Your code goes here</span>
@@ -8370,7 +8358,7 @@ Autumn  27100.670087  26670.431092  27530.909082
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [31]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [37]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># repeat the calculation per month, so bike rentals by month</span>
@@ -8431,7 +8419,7 @@ The confidence intervals are very narrow, so they do not overlap much across sea
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [32]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [38]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">figure</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span><span class="mi">5</span><span class="p">))</span>
@@ -8487,7 +8475,7 @@ The confidence intervals are very narrow, so they do not overlap much across sea
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [33]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [39]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1"># build regression model </span>
@@ -8517,7 +8505,7 @@ Dep. Variable:            bikes_hired   R-squared:                       0.526
 Model:                            OLS   Adj. R-squared:                  0.525
 Method:                 Least Squares   F-statistic:                     669.2
 Date:                Sat, 20 Sep 2025   Prob (F-statistic):               0.00
-Time:                        08:02:46   Log-Likelihood:                -49489.
+Time:                        08:17:11   Log-Likelihood:                -49489.
 No. Observations:                4840   AIC:                         9.900e+04
 Df Residuals:                    4831   BIC:                         9.905e+04
 Df Model:                           8                                         
