@@ -8307,13 +8307,13 @@ Bike rentals peak in the summer months and drop sharply in the winter months.</p
 <div class="jp-Collapser jp-InputCollapser jp-Cell-inputCollapser">
 </div>
 <div class="jp-InputArea jp-Cell-inputArea">
-<div class="jp-InputPrompt jp-InputArea-prompt">In [36]:</div>
+<div class="jp-InputPrompt jp-InputArea-prompt">In [40]:</div>
 <div class="jp-CodeMirrorEditor jp-Editor jp-InputArea-editor" data-type="inline">
 <div class="cm-editor cm-s-jupyter">
 <div class="highlight hl-ipython3"><pre><span></span><span class="c1">## Your code goes here</span>
 <span class="c1"># 95% CI for the mean number of bikes rented per season</span>
 <span class="c1"># we need the z-score, mean, and the standard error to construct CI</span>
-<span class="n">season_stats</span> <span class="o">=</span> <span class="n">bikes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"season"</span><span class="p">)[</span><span class="s2">"bikes_hired"</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"std"</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">])</span>
+<span class="n">season_stats</span> <span class="o">=</span> <span class="n">bikes</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">"season"</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s2">"bikes_hired"</span><span class="p">]</span><span class="o">.</span><span class="n">agg</span><span class="p">([</span><span class="s2">"mean"</span><span class="p">,</span> <span class="s2">"std"</span><span class="p">,</span> <span class="s2">"count"</span><span class="p">])</span>
 <span class="n">season_stats</span><span class="p">[</span><span class="s2">"se"</span><span class="p">]</span> <span class="o">=</span> <span class="n">season_stats</span><span class="p">[</span><span class="s2">"std"</span><span class="p">]</span> <span class="o">/</span>  <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">season_stats</span><span class="p">[</span><span class="s2">"count"</span><span class="p">])</span>
 
 <span class="n">z</span> <span class="o">=</span> <span class="mf">1.96</span>
@@ -8340,14 +8340,6 @@ Winter  18578.608878  18199.934018  18957.283738
 Spring  26589.479394  26097.338079  27081.620710
 Summer  33595.457983  33075.216134  34115.699832
 Autumn  27100.670087  26670.431092  27530.909082
-</pre>
-</div>
-</div>
-<div class="jp-OutputArea-child">
-<div class="jp-OutputPrompt jp-OutputArea-prompt"></div>
-<div class="jp-RenderedText jp-OutputArea-output" data-mime-type="application/vnd.jupyter.stderr" tabindex="0">
-<pre>/tmp/ipykernel_3637/25176049.py:4: FutureWarning: The default of observed=False is deprecated and will be changed to True in a future version of pandas. Pass observed=False to retain current behavior or observed=True to adopt the future default and silence this warning.
-  season_stats = bikes.groupby("season")["bikes_hired"].agg(["mean", "std", "count"])
 </pre>
 </div>
 </div>
